@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background-color: white;
+}
+
+/* Main container */
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 40px;
+}
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f4ed;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.details-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Product image */
+.details-image {
+  flex: 1;
+  text-align: center;
+  background-color: #fff;
+}
+
+.details-image img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+/* Product info */
+.details-info {
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+}
+
+.product-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.product-price {
+  font-size: 1.4rem;
+  color: rgb(78, 128, 3);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Back button */
+.back-btn {
+  text-decoration: none;
+  background-color: rgb(139, 207, 28);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: rgb(120, 185, 20);
+}
+
+/* Not found */
+.not-found {
+  flex-direction: column;
+  text-align: center;
+}
+
+.not-found h2 {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.footer{
+   margin-top: 10px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+}
+
+.footer-title{
+   display: block;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 20px;
+}

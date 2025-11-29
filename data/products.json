@@ -1,0 +1,27 @@
+
+[
+  {
+    "id": 1,
+    "name": "Rolex Day-Date",
+    "price": 9500,
+    "description": "A timeless stainless-steel masterpiece blending heritage and precision."
+  },
+  {
+    "id": 2,
+    "name": "Rolex Daytona Panda",
+    "price": 12000,
+    "description": "An iconic chronograph with impeccable design and racing DNA."
+  },
+  {
+    "id": 3,
+    "name": "Rolex Daytona Rainbow",
+    "price": 25000,
+    "description": "A luxury sports watch showcasing craftsmanship and elegance."
+  },
+  {
+    "id": 4,
+    "name": "Rolex Daytona John Mayer",
+    "price": 31000,
+    "description": "The Royal Oak features bold aesthetics and technical brilliance."
+  }
+]

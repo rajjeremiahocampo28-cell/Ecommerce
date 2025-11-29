@@ -1,0 +1,82 @@
+
+/* Page background */
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background-color: white;
+}
+
+.product-page {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+/* Title */
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f1f1f;
+  margin-bottom: 40px;
+}
+
+/* Grid layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Card */
+.product-card {
+  width: 260px;
+  background-color: #f5f4ed;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Image */
+.product-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+/* Brand name text */
+.brand-name {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* Specific brand colors */
+.rolex {
+  color: #006039;
+  font-weight: bold;
+}
+
+.cartier {
+  color: #c6002a;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.ap {
+  color: #1c1c1c;
+  font-weight: 600;
+}
+
+.patek {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}
