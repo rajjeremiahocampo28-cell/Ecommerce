@@ -1,20 +1,33 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import HomePage from "./Homepage";
-import AboutUs from "./AboutUs";
-import Contacts from "./Contacts";
 import ProductList from "./components/ProductList";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./Cart";
 import Product from "./Product";
 import Checkout from "./Checkout";
+
+// Pages
+import Login from "./pages/Login";
+import AdminDashboard from "./pages/AdminDashboard";
+import OrderHistory from "./OrderHistory";
+
 import "./App.css";
 
 export default function App() {
+  // Cart & User State
   const [cart, setCart] = useState([]);
+  const [user, setUser] = useState(null); // store logged-in user
 
-  // Cart functions
+  // Products State (for admin management + user-facing products)
+  const [products, setProducts] = useState([
+    { id: 1, name: "Watch A", price: 100, img: "https://via.placeholder.com/80" },
+    { id: 2, name: "Watch B", price: 150, img: "https://via.placeholder.com/80" },
+  ]);
+
+  // Cart Functions
   const addToCart = (product) => setCart([...cart, product]);
   const removeFromCart = (id) => setCart(cart.filter((item) => item.id !== id));
   const clearCart = () => setCart([]);
@@ -22,28 +35,42 @@ export default function App() {
   return (
     <Router>
       <div className="min-h-screen bg-[#f9f8f3]">
-        <Navbar />
+        {/* PASS user + setUser to Navbar */}
+        <Navbar user={user} setUser={setUser} />
+
         <Routes>
-          {/* Home Page */}
-          <Route path="/" element={<HomePage />} />
+          {/* Login */}
+          <Route path="/login" element={<Login setUser={setUser} />} />
 
-          {/* Products Page */}
-          <Route path="/products" element={<ProductList addToCart={addToCart} />} />
+          {/* Admin Page - Pass products + setProducts for management */}
+          <Route
+            path="/admin-dashboard"
+            element={<AdminDashboard products={products} setProducts={setProducts} />}
+          />
 
-          {/* Product Details */}
-          <Route path="/products/:id" element={<ProductDetails />} />
+          {/* Public Pages */}
+          <Route path="/" element={<HomePage addToCart={addToCart} products={products} />} />
+          <Route
+            path="/products"
+            element={<ProductList addToCart={addToCart} products={products} />}
+          />
+          <Route
+            path="/products/:id"
+            element={<ProductDetails addToCart={addToCart} products={products} />}
+          />
+          <Route path="/order-history" element={<OrderHistory />} />
 
           {/* Cart Page */}
           <Route
             path="/cart"
             element={
-              <div className="cart-page">
+              <div className="cart-page flex gap-6">
                 <Cart
                   cart={cart}
                   removeFromCart={removeFromCart}
-                  proceedToCheckout={() => window.location.href = "/checkout"} 
+                  proceedToCheckout={() => (window.location.href = "/checkout")}
                 />
-                <Product addToCart={addToCart} />
+                <Product addToCart={addToCart} products={products} />
               </div>
             }
           />
@@ -51,18 +78,8 @@ export default function App() {
           {/* Checkout Page */}
           <Route
             path="/checkout"
-            element={
-              <Checkout
-                cart={cart}
-                clearCart={clearCart}
-                goBack={() => window.history.back()} // go back to cart
-              />
-            }
+            element={<Checkout cart={cart} clearCart={clearCart} goBack={() => window.history.back()} />}
           />
-
-          {/* Contacts and About */}
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/about" element={<AboutUs />} />
         </Routes>
       </div>
     </Router>

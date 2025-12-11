@@ -1,0 +1,101 @@
+/* Center container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+/* Login card */
+.login-card {
+  background-color: rgb(221, 214, 214)smoke;
+  padding: 24px 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 280px;
+}
+
+/* Title */
+.login-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Error message */
+.login-error {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Form layout */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.login-label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 6px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgb(139, 207, 28);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: rgb(120, 185, 20);
+}
+
+
+
+
+
+
+
+
+.signup-text {
+  margin-top: 15px;
+  text-align: center;
+  color: #666;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
